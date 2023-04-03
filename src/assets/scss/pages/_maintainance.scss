@@ -1,0 +1,85 @@
+@use "../common/breakpoints" as *;
+@use "../common/mixin" as *;
+@use "../common/color" as *;
+
+
+.Maintainance{
+    height: 100vh;
+
+    .container{
+        position: relative;
+        justify-content: center;
+            align-items: center;
+            height: 100vh;
+            display: flex;
+
+        .row{
+
+
+            .morphisam{
+                @include glassmorphism-effect;
+                padding: 15px;
+               
+
+                &::before{
+                    position: absolute;
+                    left: -70px;
+                    content: "";
+                    top: -70px;
+                    width: 300px;
+                    height: 300px;
+                    background-color: $white;
+                    opacity: 0.2;
+                    border-color: $white;
+                    border-radius: 50%;
+
+                    @media #{$large-device} {
+                      left: 0;
+                      width: 100px;
+                      height: 100px;
+                      top: -30px;
+                    }
+                }
+
+                .left_image{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+
+                    .lottie{
+                        height: 500px;
+                        object-fit: contain;
+
+                        @media #{$large-device} {
+                            height: 200px;
+                        }
+                    }
+
+                }
+
+                .right_text{
+                    text-align: center;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        color: $white;
+                        text-align: center;
+                        width: 70%;
+
+
+                        @media #{$large-device} {
+
+                            width: auto;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}
